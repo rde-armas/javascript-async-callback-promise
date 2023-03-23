@@ -13,7 +13,7 @@ async function* iteratorData(urlApi) {
         const products = await fetchData(`${urlApi}/products`);
         yield console.log(products);
         
-        const product =  fetchData(`${urlApi}/products/${products[0].id}`);
+        const product = await fetchData(`${urlApi}/products/${products[0].id}`);
         yield console.log(product.title);
         
         const category = await fetchData(`${urlApi}/categories/${product.category.id}`);
